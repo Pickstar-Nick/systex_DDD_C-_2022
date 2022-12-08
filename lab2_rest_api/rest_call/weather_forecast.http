@@ -1,0 +1,7 @@
+@server = localhost
+@endpoint1 = WeatherForecast
+get https://{{server}}:7144/{{endpoint1}}
+
+###
+
+get http://{{server}}:5159/{{endpoint1}}
