@@ -10,7 +10,7 @@ public class BlogContext : DbContext
     {
         var folder = Environment.SpecialFolder.LocalApplicationData;
         var path = Environment.GetFolderPath(folder);
-        DbPath = System.IO.Path.Join(path,"lab4.db");
+        DbPath = System.IO.Path.Join(path,"lab4_1.db");
     }
     protected override void OnConfiguring(DbContextOptionsBuilder options) 
     => options.UseSqlite($"Data Source={DbPath}");
