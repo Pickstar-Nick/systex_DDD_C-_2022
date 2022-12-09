@@ -9,11 +9,22 @@ public class EventController:ControllerBase
     [HttpPost("add-event")]
     public IActionResult AddEvent(AddEventRequest request)
     {
-        return Ok(request);
+        AddEventResponse response = new AddEventResponse(
+            Guid.NewGuid(),
+            request.name,
+            request.coordinator,
+            request.place,
+            request.lat,
+            request.lng,
+            request.fee
+        );
+        return Ok(response);
     }
-    [HttpGet("query-event")]
+    [HttpPost("query-event")]
     public IActionResult QueryEvent(QueryEventRequest request)
     {
-        return Ok(request);
+        QueryEventResponse response = new QueryEventResponse("name","Nick","Taipei",120.2f,23.5f,100);
+        QueryEventResponse[] events = new QueryEventResponse[]{response,response,response};
+        return Ok(events);
     }
 }
