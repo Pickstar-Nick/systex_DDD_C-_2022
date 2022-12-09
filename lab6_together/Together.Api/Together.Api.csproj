@@ -5,10 +5,10 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
+ <!-- 移除swagger相關參考 -->
+  <!-- <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
+  </ItemGroup> -->
 
   <ItemGroup>
     <ProjectReference Include="..\Together.Contract\Together.Contract.csproj" />
