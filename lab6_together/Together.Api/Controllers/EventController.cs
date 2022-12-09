@@ -29,8 +29,13 @@ public class EventController:ControllerBase
     [HttpPost("query-event")]
     public IActionResult QueryEvent(QueryEventRequest request)
     {
-        QueryEventResponse response = new QueryEventResponse("name","Nick","Taipei",120.2f,23.5f,100);
-        QueryEventResponse[] events = new QueryEventResponse[]{response,response,response};
+        var result = this.eventService.query(request.lat,request.lng,request.length);
+        List<QueryEventResponse> events = new();
+        foreach(var r in result)
+        {
+            QueryEventResponse response = new QueryEventResponse(r.name,r.coordinator,r.name, r.lat, r.lng, r.fee);
+            events.Add(response);
+        }
         return Ok(events);
     }
 }

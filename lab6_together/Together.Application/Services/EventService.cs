@@ -7,7 +7,7 @@ public class EventService : IEventService
         return new EventAddResult(Guid.NewGuid(), name, coordinator, place, lat, lng, fee);
     }
 
-    public EventQueryResult[] query(float lat, float lng, int fee)
+    public EventQueryResult[] query(float lat, float lng, float len)
     {
         EventQueryResult result = new EventQueryResult("Nick", "Pick", "TPE", 178.5f, 23.5f, 500);
         EventQueryResult[] results = new EventQueryResult[] { result, result, result };

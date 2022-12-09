@@ -1,3 +1,4 @@
+using Together.Appliction;
 using Together.Appliction.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 {
     builder.Services.AddControllers();
-    builder.Services.AddScoped<IEventService,EventService>();
+    //builder.Services.AddScoped<IEventService,EventService>();
+    builder.Services.AddApplication();
 }
 //與Swagger相關
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
